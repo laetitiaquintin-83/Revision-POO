@@ -1,0 +1,13 @@
+{
+    "name": "revision-poo/job-15",
+    "description": "Job 15 - Autoloading avec Composer et Namespaces",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}

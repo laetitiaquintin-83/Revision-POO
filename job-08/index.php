@@ -3,7 +3,7 @@
 require_once 'Product.php';
 require_once 'Category.php';
 
-echo "<h1>Job 07 - Méthode findOneById()</h1>";
+echo "<h1>Job 08 - Méthode findAll()</h1>";
 
 // 1. Création d'une instance vide de Product
 $product = new Product();
@@ -42,3 +42,22 @@ if ($result2 === false) {
 echo "<hr>";
 echo "<h2>var_dump du produit ID 7 :</h2>";
 var_dump($product);
+
+// 5. Test de findAll() - Récupérer tous les produits
+echo "<hr>";
+echo "<h1>Test de findAll()</h1>";
+
+$productInstance = new Product();
+$allProducts = $productInstance->findAll();
+
+echo "<h2>Liste de tous les produits (" . count($allProducts) . " produits) :</h2>";
+echo "<ul>";
+foreach ($allProducts as $p) {
+    echo "<li>";
+    echo "<strong>" . $p->getName() . "</strong> - " . $p->getPrice() . " centimes (Quantité: " . $p->getQuantity() . ")";
+    echo "</li>";
+}
+echo "</ul>";
+
+echo "<h2>var_dump de tous les produits :</h2>";
+var_dump($allProducts);
